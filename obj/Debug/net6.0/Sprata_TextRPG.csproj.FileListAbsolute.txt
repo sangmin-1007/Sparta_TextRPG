@@ -1,0 +1,15 @@
+F:\first\Sparta_TextRPG\bin\Debug\net6.0\Sprata_TextRPG.exe
+F:\first\Sparta_TextRPG\bin\Debug\net6.0\Sprata_TextRPG.deps.json
+F:\first\Sparta_TextRPG\bin\Debug\net6.0\Sprata_TextRPG.runtimeconfig.json
+F:\first\Sparta_TextRPG\bin\Debug\net6.0\Sprata_TextRPG.dll
+F:\first\Sparta_TextRPG\bin\Debug\net6.0\Sprata_TextRPG.pdb
+F:\first\Sparta_TextRPG\obj\Debug\net6.0\Sprata_TextRPG.csproj.AssemblyReference.cache
+F:\first\Sparta_TextRPG\obj\Debug\net6.0\Sprata_TextRPG.GeneratedMSBuildEditorConfig.editorconfig
+F:\first\Sparta_TextRPG\obj\Debug\net6.0\Sprata_TextRPG.AssemblyInfoInputs.cache
+F:\first\Sparta_TextRPG\obj\Debug\net6.0\Sprata_TextRPG.AssemblyInfo.cs
+F:\first\Sparta_TextRPG\obj\Debug\net6.0\Sprata_TextRPG.csproj.CoreCompileInputs.cache
+F:\first\Sparta_TextRPG\obj\Debug\net6.0\Sprata_TextRPG.dll
+F:\first\Sparta_TextRPG\obj\Debug\net6.0\refint\Sprata_TextRPG.dll
+F:\first\Sparta_TextRPG\obj\Debug\net6.0\Sprata_TextRPG.pdb
+F:\first\Sparta_TextRPG\obj\Debug\net6.0\Sprata_TextRPG.genruntimeconfig.cache
+F:\first\Sparta_TextRPG\obj\Debug\net6.0\ref\Sprata_TextRPG.dll
