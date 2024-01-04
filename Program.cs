@@ -3,7 +3,9 @@
     internal class Program
     {
         static bool run = true;
-        static Item item1 = new Item("무쇠갑옷", 5, "방어력", "무쇠로 만들어져 튼튼한 갑옷입니다.");
+        static Item item1 = new Item("무쇠갑옷", 5, ItemType.Armor, "무쇠로 만들어져 튼튼한 갑옷입니다.");
+        static Item item2 = new Item("낡은 검", 5, ItemType.Weapon, "무쇠로 만들어져 튼튼한 갑옷입니다.");
+        static Item item3 = new Item("절명의 단검", 15, ItemType.Weapon, "무쇠로 만들어져 튼튼한 갑옷입니다.");
 
         static void Main(string[] args)
         {
@@ -11,6 +13,8 @@
             Player player = new Player();
             player.CreatePlayer(1, "김상민", "전사", 10, 5, 100, 1500);
             player.AddInven(item1);
+            player.AddInven(item2);
+            player.AddInven(item3);
 
             while (run)
             {
@@ -36,10 +40,12 @@
             {
                 case "1":
                     // 플레이어 정보
+                    Console.Clear();
                     player.Info();
                     break;
                 case "2":
                     // 인벤토리
+                    Console.Clear();
                     player.Inven();
                     break;
                 case "3":
@@ -49,6 +55,7 @@
                     run = false;
                     break;
                 default:
+                    Console.Clear();
                     Console.WriteLine(" ");
                     Console.WriteLine("잘못된 입력입니다. ");
                     Console.WriteLine(" ");
