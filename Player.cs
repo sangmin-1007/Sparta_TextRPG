@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 namespace Sprata_TextRPG
 {
 
+
     internal class Player
     {
         public int level;
@@ -18,9 +19,8 @@ namespace Sprata_TextRPG
         public int hp;
         public int gold;
 
-
-
-
+        
+        public List<Item> inven = new List<Item>();
 
 
         public void CreatePlayer(int _level,string _name,  string _classType, int _atk, int _def, int _hp, int _gold)
@@ -36,7 +36,7 @@ namespace Sprata_TextRPG
 
         public void Info()
         {
-            string input = null;
+            string input = "1";
          
             while(input != "0")
             {
@@ -61,6 +61,50 @@ namespace Sprata_TextRPG
 
             }
             Console.Clear();
+        }
+
+        public void Inven()
+        {
+            string input = null;
+
+            if( inven != null )
+            {
+                for (int i = 0; i < inven.Count; i++)
+                {
+                    Console.WriteLine($"{i + 1}. {inven[i].itemName}    | {inven[i].itemType}+{inven[i].option}    | {inven[i].itemInfo}");
+                }
+            }
+            else
+            {
+                Console.WriteLine("아무것도 없습니다.");
+            }
+
+            Console.WriteLine();
+            Console.WriteLine("1. 장착관리");
+            Console.WriteLine("2. 나가기");
+
+            Console.WriteLine("원하시는 행동을 입력해주세요.");
+            Console.Write(">>");
+            input = Console.ReadLine();
+
+            switch (input)
+            {
+                case "1":
+                    //장착관리
+                    break;
+                case "2":
+                    Console.Clear();
+                    break;
+                default:
+                    Inven();
+                    break;
+            }
+
+        }
+
+        public void AddInven(Item item)
+        {
+            inven.Add(item);
         }
     }
 }
