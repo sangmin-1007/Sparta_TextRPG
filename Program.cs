@@ -35,6 +35,7 @@
             switch (input)
             {
                 case "1":
+                    // 플레이어 정보
                     player.Info();
                     break;
                 case "2":

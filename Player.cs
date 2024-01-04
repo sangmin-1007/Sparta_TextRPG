@@ -20,7 +20,7 @@ namespace Sprata_TextRPG
         public int gold;
 
         
-        public List<Item> inven = new List<Item>();
+        List<Item> inven = new List<Item>();
 
 
         public void CreatePlayer(int _level,string _name,  string _classType, int _atk, int _def, int _hp, int _gold)
@@ -67,17 +67,16 @@ namespace Sprata_TextRPG
         {
             string input = null;
 
-            if( inven != null )
+            if(inven.Count > 0)
             {
                 for (int i = 0; i < inven.Count; i++)
                 {
                     Console.WriteLine($"{i + 1}. {inven[i].itemName}    | {inven[i].itemType}+{inven[i].option}    | {inven[i].itemInfo}");
                 }
             }
-            else
-            {
-                Console.WriteLine("아무것도 없습니다.");
-            }
+                
+            
+           
 
             Console.WriteLine();
             Console.WriteLine("1. 장착관리");
