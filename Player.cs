@@ -79,6 +79,7 @@ namespace Sprata_TextRPG
 
                 if(input !=  "0")
                 {
+                    Console.Clear();
                     Console.WriteLine("다시 입력해주세요");
                 }
 
@@ -179,17 +180,6 @@ namespace Sprata_TextRPG
             {
                 if (inven[inputNum - 1].isEquip == false)
                 {
-                    //for(int i = 0; i< inven.Count;i++)
-                    //{
-                    //    if (inven[i].isEquip == true)
-                    //    {
-                    //        if (inven[inputNum - 1].itemType == inven[i].itemType)
-                    //        {
-                    //            inven[i].isEquip = false;
-                    //        }
-                    //    }
-                    //}
-
                     inven[inputNum - 1].isEquip = true;
                     inven[inputNum - 1].equipMsg = "[E] ";
                     if (inven[inputNum - 1].itemType == ItemType.Weapon)

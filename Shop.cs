@@ -63,6 +63,11 @@ namespace Sprata_TextRPG
                 case "0":
                     Console.Clear();
                     break;
+                default:
+                    Console.Clear();
+                    Console.WriteLine("다시 입력해주세요");
+                    Shopinfo(player);
+                    break;
             }
         }
 
@@ -76,10 +81,10 @@ namespace Sprata_TextRPG
             {
                 if (items[i].isBuy == true)
                 {
-                    Console.WriteLine($"- {items[i].itemName,-10}| {items[i].optionText} + {items[i].option}    | {items[i].itemInfo,-40}    | 구매완료.");
+                    Console.WriteLine($"-{i+1} {items[i].itemName,-10}| {items[i].optionText} + {items[i].option,10}    | {items[i].itemInfo,30}    | 구매완료.");
                 }
                 else
-                    Console.WriteLine($"- {items[i].itemName,-10}| {items[i].optionText} + {items[i].option}    | {items[i].itemInfo,-40}    | {items[i].buyGold} G");
+                    Console.WriteLine($"-{i+1} {items[i].itemName,-10}| {items[i].optionText} + {items[i].option,10}    | {items[i].itemInfo,30}    | {items[i].buyGold} G");
 
             }
 
@@ -104,7 +109,7 @@ namespace Sprata_TextRPG
                 Console.WriteLine("다시 입력해주세요");
                 Shopping(player);
             }
-            else if(inputNum -1 <= items.Count)
+            else if(inputNum -1 < items.Count)
             {
                 if (items[inputNum-1].buyGold <= player.gold)
                 {
@@ -119,12 +124,16 @@ namespace Sprata_TextRPG
                     Console.Clear();
                     Console.WriteLine("구매할 수 없습니다.");
                 }
-                
-                
+
                 Shopping(player);
 
             }
-
+            else
+            {
+                Console.Clear();
+                Console.WriteLine("잘못 입력하셨습니다.");
+                Shopping(player);
+            }
         
         }
         

@@ -9,11 +9,12 @@
         static Item item4 = new Item("낡은 검", 2, ItemType.Weapon, "쉽게 볼 수 있는 낡은 검 입니다.", 600);
         static Item item5 = new Item("청동 도끼", 5, ItemType.Weapon, "어디선가 사용됐던거 같은 도끼입니다.", 1500);
         static Item item6 = new Item("스파르타의 창", 7, ItemType.Weapon, "스파르타의 전사들이 사용했다는 전설의 창입니다.",3500);
+        static Item item7 = new Item("상민이가 받는 고통", 9999, ItemType.Weapon, "과제가 힘들어 죽으려고하는 상민이의 고통이 서린 검", 999999);
         static void Main(string[] args)
         {
 
             Player player = new Player();
-            player.CreatePlayer(1, "김상민", "전사", 10, 5, 100, 1500);
+            player.CreatePlayer(1, "김상민", "전사", 10, 5, 100, 10000);
             Shop shop = new Shop();
             shop.AddShopItem(item1);
             shop.AddShopItem(item2);
@@ -21,10 +22,7 @@
             shop.AddShopItem(item4);
             shop.AddShopItem(item5);
             shop.AddShopItem(item6);
-
-            player.AddInven(item1);
-            player.AddInven(item2);
-            player.AddInven(item3);
+            shop.AddShopItem(item7);
 
             while (run)
             {
