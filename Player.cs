@@ -25,7 +25,7 @@ namespace Sprata_TextRPG
         public string addDefTxt;
 
         
-        List<Item> inven = new List<Item>();
+        public List<Item> inven = new List<Item>();
 
 
         public void CreatePlayer(int _level,string _name,  string _classType, int _atk, int _def, int _hp, int _gold) // 플레이어 생성자.
@@ -121,6 +121,7 @@ namespace Sprata_TextRPG
                     Console.Clear();
                     break;
                 default:
+                    Console.Clear();
                     Inven();
                     break;
             }
@@ -157,15 +158,19 @@ namespace Sprata_TextRPG
             input = Console.ReadLine();
             int inputNum = 0;
             inputNum = int.TryParse(input, out inputNum) ? inputNum : -1;
-            
 
-            if(inputNum == 0)
+            if (inputNum == 0)
             {
                 Console.Clear();
                 Inven();
-                
+
             }
-            else if(inputNum -1 > inven.Count || inputNum-1 < 0)
+            else if (inputNum - 1 > inven.Count || inputNum - 1 < 0)
+            {
+                Console.Clear();
+                EquipManager();
+            }
+            else if (inven.Count == 0)
             {
                 Console.Clear();
                 EquipManager();
@@ -174,6 +179,17 @@ namespace Sprata_TextRPG
             {
                 if (inven[inputNum - 1].isEquip == false)
                 {
+                    //for(int i = 0; i< inven.Count;i++)
+                    //{
+                    //    if (inven[i].isEquip == true)
+                    //    {
+                    //        if (inven[inputNum - 1].itemType == inven[i].itemType)
+                    //        {
+                    //            inven[i].isEquip = false;
+                    //        }
+                    //    }
+                    //}
+
                     inven[inputNum - 1].isEquip = true;
                     inven[inputNum - 1].equipMsg = "[E] ";
                     if (inven[inputNum - 1].itemType == ItemType.Weapon)
@@ -192,18 +208,15 @@ namespace Sprata_TextRPG
                 }
                 else
                 {
-                    inven[inputNum-1].isEquip = false;
+                    inven[inputNum - 1].isEquip = false;
                     inven[inputNum - 1].equipMsg = "";
                     if (inven[inputNum - 1].itemType == ItemType.Weapon)
                     {
-                        addAtk -= inven[inputNum-1].option;
-                        //addAtkTxt = " ( + " + addAtk + ")";
-                       
+                        addAtk -= inven[inputNum - 1].option;
                     }
-                    else if (inven[inputNum-1].itemType == ItemType.Armor)
+                    else if (inven[inputNum - 1].itemType == ItemType.Armor)
                     {
-                        addDef -= inven[inputNum-1].option;
-                        //addDefTxt += " (+" + addDef + ")";
+                        addDef -= inven[inputNum - 1].option;
                     }
                     Console.Clear();
                     EquipManager();
@@ -212,5 +225,11 @@ namespace Sprata_TextRPG
             }
 
         }
+
+
+
+
+
+
     }
 }
